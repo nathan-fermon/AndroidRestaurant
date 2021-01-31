@@ -3,4 +3,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="entree">entree</string>
+    <string name="plat">plat</string>
+    <string name="dessert">dessert</string>
+    <string name="resto">resto</string>
 </resources>
