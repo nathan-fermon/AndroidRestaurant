@@ -7,4 +7,14 @@
     <string name="plat">plat</string>
     <string name="dessert">dessert</string>
     <string name="resto">resto</string>
+    <string name="hello">Bienvenue\nchez</string>
+    <string name="toast_content">Contenu du toast</string>
+
+    <string name="total">Total</string>
+    <string name="basket_validation">Votre plat a bien été ajouté au panier</string>
+    <string name="basket">Panier</string>
+    <string name="order">Passer commande</string>
+    <string name="quantity">Quantité :</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
