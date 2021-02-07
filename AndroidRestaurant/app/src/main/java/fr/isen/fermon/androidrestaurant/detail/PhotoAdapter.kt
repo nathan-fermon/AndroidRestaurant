@@ -1,4 +1,4 @@
-package com.example.isen_2021.detail
+package fr.isen.fermon.androidrestaurant.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

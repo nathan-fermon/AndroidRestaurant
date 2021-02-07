@@ -17,4 +17,14 @@
     <string name="quantity">Quantité :</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="registrationTitle">Création de votre compte</string>
+    <string name="firstname">Prénom</string>
+    <string name="lastname">Nom</string>
+    <string name="email">Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="register">Créer votre compte</string>
+
+    <string name="login">Se connecter</string>
+
 </resources>

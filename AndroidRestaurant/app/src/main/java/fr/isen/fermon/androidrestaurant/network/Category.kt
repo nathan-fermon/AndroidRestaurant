@@ -1,4 +1,4 @@
-package com.example.isen_2021.network
+package fr.isen.fermon.androidrestaurant.network
 
 import com.google.gson.annotations.SerializedName
 

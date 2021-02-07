@@ -1,8 +1,7 @@
-package com.example.isen_2021.basket
+package fr.isen.fermon.androidrestaurant.basket
 
 import android.content.Context
-import com.example.isen_2021.detail.DetailActivity
-import com.example.isen_2021.network.Dish
+import fr.isen.fermon.androidrestaurant.network.Dish
 import com.google.gson.GsonBuilder
 import java.io.File
 import java.io.Serializable
@@ -13,12 +12,12 @@ class Basket (val items: MutableList<BasketItem>): Serializable {
         get() {
             return if(items.count() > 0) {
                 items
-                    .map { it.count }
-                    .reduce { acc, i -> acc + i }
+                        .map { it.count }
+                        .reduce { acc, i -> acc + i }
             } else {
                 0
             }
-    }
+        }
 
 
     fun addItem(item: BasketItem) {
@@ -30,6 +29,10 @@ class Basket (val items: MutableList<BasketItem>): Serializable {
         } ?: run {
             items.add(item)
         }
+    }
+
+    fun clear() {
+        items.clear()
     }
 
     fun save(context: Context) {

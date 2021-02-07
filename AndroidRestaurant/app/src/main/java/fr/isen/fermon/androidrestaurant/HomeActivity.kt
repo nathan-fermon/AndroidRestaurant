@@ -2,8 +2,8 @@ package fr.isen.fermon.androidrestaurant
 
 import android.content.Intent
 import android.os.Bundle
-import com.example.isen_2021.CategoryActivity
-import com.example.isen_2021.ItemType
+import fr.isen.fermon.androidrestaurant.category.CategoryActivity
+import fr.isen.fermon.androidrestaurant.category.ItemType
 import fr.isen.fermon.androidrestaurant.databinding.ActivityHomeBinding
 
 private lateinit var binding: ActivityHomeBinding

@@ -1,4 +1,4 @@
-package com.example.isen_2021.basket
+package fr.isen.fermon.androidrestaurant.basket
 
 import android.content.Context
 import android.os.Bundle

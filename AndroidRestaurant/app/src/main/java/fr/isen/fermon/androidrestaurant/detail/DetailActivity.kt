@@ -1,9 +1,9 @@
-package com.example.isen_2021.detail
+package fr.isen.fermon.androidrestaurant.detail
 
 import android.os.Bundle
-import com.example.isen_2021.basket.Basket
-import com.example.isen_2021.basket.BasketItem
-import com.example.isen_2021.network.Dish
+import fr.isen.fermon.androidrestaurant.basket.Basket
+import fr.isen.fermon.androidrestaurant.basket.BasketItem
+import fr.isen.fermon.androidrestaurant.network.Dish
 import com.google.android.material.snackbar.Snackbar
 import fr.isen.fermon.androidrestaurant.BaseActivity
 import fr.isen.fermon.androidrestaurant.R

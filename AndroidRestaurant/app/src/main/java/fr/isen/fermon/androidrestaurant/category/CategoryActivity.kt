@@ -1,23 +1,25 @@
-package com.example.isen_2021
+package fr.isen.fermon.androidrestaurant.category
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.webkit.WebChromeClient.FileChooserParams.parseResult
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.example.isen_2021.detail.DetailActivity
-import com.example.isen_2021.network.Dish
-import com.example.isen_2021.network.MenuResult
-import com.example.isen_2021.network.NetworkConstant
+import fr.isen.fermon.androidrestaurant.network.Dish
+import fr.isen.fermon.androidrestaurant.network.MenuResult
+import fr.isen.fermon.androidrestaurant.network.NetworkConstant
 import com.google.gson.GsonBuilder
 import fr.isen.fermon.androidrestaurant.BaseActivity
 import fr.isen.fermon.androidrestaurant.HomeActivity
 import fr.isen.fermon.androidrestaurant.R
-import fr.isen.fermon.androidrestaurant.category.CategoryAdapter
+import fr.isen.fermon.androidrestaurant.basket.Basket.Companion.USER_PREFERENCES_NAME
+import fr.isen.fermon.androidrestaurant.utils.Loader
 import fr.isen.fermon.androidrestaurant.databinding.ActivityCategoryBinding
+import fr.isen.fermon.androidrestaurant.detail.DetailActivity
 import org.json.JSONObject
 
 enum class ItemType {
@@ -78,11 +80,13 @@ class CategoryActivity : BaseActivity() {
     }
 
     private fun makeRequest(selectedItem: ItemType?) {
-        //resultFromCache()?.let {
+        resultFromCache()?.let {
             // La requete est en cache
-            //parseResult(it, selectedItem)
-        //} ?: run {
+            parseResult(it, selectedItem)
+        } ?: run {
             // La requete n'est pas en cache
+            val loader = Loader()
+            loader.show(this, "récupération du menu")
             val queue = Volley.newRequestQueue(this)
             val url = NetworkConstant.BASE_URL + NetworkConstant.PATH_MENU
 
@@ -94,11 +98,13 @@ class CategoryActivity : BaseActivity() {
                     url,
                     jsonData,
                     { response ->
+                        loader.hide(this)
                         //bindind.swipeLayout.isRefreshing = false
                         //cacheResult(response.toString())
                         parseResult(response.toString(), selectedItem)
                     },
                     { error ->
+                        loader.hide(this)
                         //bindind.swipeLayout.isRefreshing = false
                         error.message?.let {
                             Log.d("request", it)
@@ -109,26 +115,26 @@ class CategoryActivity : BaseActivity() {
             )
             queue.add(request)
         }
-    //}
+    }
 
-    /*private fun cacheResult(response: String) {
+    private fun cacheResult(response: String) {
         val sharedPreferences = getSharedPreferences(USER_PREFERENCES_NAME, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString(REQUEST_CACHE, response)
         editor.apply()
-    }*/
+    }
 
-   /* private fun resetCache() {
+    private fun resetCache() {
         val sharedPreferences = getSharedPreferences(USER_PREFERENCES_NAME, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.remove(REQUEST_CACHE)
         editor.apply()
-    }*/
+    }
 
-    /*private fun resultFromCache(): String? {
+    private fun resultFromCache(): String? {
         val sharedPreferences = getSharedPreferences(USER_PREFERENCES_NAME, Context.MODE_PRIVATE)
         return sharedPreferences.getString(REQUEST_CACHE, null)
-    }*/
+    }
 
     private fun parseResult(response: String, selectedItem: ItemType?) {
         val menuResult = GsonBuilder().create().fromJson(response, MenuResult::class.java)
@@ -153,7 +159,7 @@ class CategoryActivity : BaseActivity() {
     }
 
     companion object{
-        const val USER_PREFERENCE_NAME = "USER_PREFERENCE_NAME"
+        const val USER_PREFERENCE_NAME = "USER_PREFERENCES_NAME"
         const val REQUEST_CACHE = "REQUEST_CACHE"
     }
 }

@@ -2,11 +2,10 @@ package fr.isen.fermon.androidrestaurant.category
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ExpandableListView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.isen_2021.network.Dish
+import fr.isen.fermon.androidrestaurant.network.Dish
 import com.squareup.picasso.Picasso
 import fr.isen.fermon.androidrestaurant.R
 import fr.isen.fermon.androidrestaurant.databinding.DishesCellBinding

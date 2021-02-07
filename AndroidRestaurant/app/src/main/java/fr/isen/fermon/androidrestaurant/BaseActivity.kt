@@ -2,14 +2,12 @@ package fr.isen.fermon.androidrestaurant
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.Menu
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.example.isen_2021.basket.Basket
-import com.example.isen_2021.basket.BasketActivity
-import com.example.isen_2021.detail.DetailActivity
+import fr.isen.fermon.androidrestaurant.basket.Basket
+import fr.isen.fermon.androidrestaurant.basket.BasketActivity
 
 open class BaseActivity: AppCompatActivity() {
 

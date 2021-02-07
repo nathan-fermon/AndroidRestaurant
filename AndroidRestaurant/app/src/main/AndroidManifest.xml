@@ -10,8 +10,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="false"
-        android:theme="@style/Theme.AndroidRestaurant">
+        android:theme="@style/Theme.AndroidRestaurant"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".registration.UserActivity"></activity>
+        <activity android:name=".basket.BasketActivity"></activity>
+        <activity android:name=".detail.DetailActivity" />
+        <activity android:name=".category.CategoryActivity" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/app_name">

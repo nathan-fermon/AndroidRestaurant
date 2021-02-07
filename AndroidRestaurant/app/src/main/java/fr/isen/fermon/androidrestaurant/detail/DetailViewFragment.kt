@@ -1,13 +1,12 @@
-package com.example.isen_2021.detail
+package fr.isen.fermon.androidrestaurant.detail
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.example.isen_2021.network.Dish
+import fr.isen.fermon.androidrestaurant.network.Dish
 import fr.isen.fermon.androidrestaurant.databinding.FragmentDetailViewBinding
 
 
